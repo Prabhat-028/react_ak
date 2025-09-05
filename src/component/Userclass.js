@@ -16,7 +16,7 @@ class UserClass extends React.Component{
 
     async componentDidMount() {
 
-        const data = await fetch("https://api.github.com/users/akshaymarch7");
+        const data = await fetch("https://api.github.com/users/prabhat-028");
         const json = await data.json();
         console.log(json);
 
@@ -27,17 +27,16 @@ class UserClass extends React.Component{
     }
 
     render() {
-        const { name, location, avatar_url } = this.state.userInfo;
+        const { name, bio, avatar_url } = this.state.userInfo;
         return (
           <div className="user-card">
-            <p>this all things is passed by Class Based Component</p>
 
                 {/* <h1>count={count}</h1> */}
                 {/* <buttonclassName="increaseButton">Count Increase</button> */}
             <img className="avatar" src={avatar_url} alt="img"/>
 
             <h2>Name:{name}</h2>
-            <h3>Location:{location}</h3>
+            <h3>Bio:{bio}</h3>
           </div>
         ); 
     }
